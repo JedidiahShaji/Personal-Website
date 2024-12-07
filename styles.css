@@ -1,0 +1,572 @@
+/* ================================
+   GENERAL BODY STYLING
+   ================================ */
+
+   body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+/* ================================
+   SIDEBAR STYLING
+   ================================ */
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #000;
+    width: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    height: 100%;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 20px 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #aaa;
+}
+
+/* ================================
+   MAIN CONTENT AREA
+   ================================ */
+
+.content {
+    margin-left: 220px; /* Space for the sidebar */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* ================================
+   INTRO SECTION
+   ================================ */
+
+#intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 50px;
+    position: relative;
+    text-align: left;
+}
+
+.intro-content {
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.joke {
+    font-size: 1.5rem;
+    color: #e6bbbb;
+}
+
+/* INTRO IMAGE */
+.intro-image {
+    max-width: 40%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* RESPONSIVE DESIGN FOR SMALLER SCREENS */
+@media (max-width: 768px) {
+    #intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-content,
+    .intro-image {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .intro-content {
+        margin-bottom: 20px;
+    }
+}
+
+/* ================================
+   WORK EXPERIENCE SECTION
+   ================================ */
+
+/* SECTION TITLE */
+.section-title, h2 {
+    font-size: 2.5rem;
+    color: #b88df6;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+/* WORK CARDS CONTAINER */
+.work-cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* INDIVIDUAL WORK CARD */
+.work-card {
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 15px;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, width 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.work-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.work-card h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.work-duration {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+/* HOVER EFFECTS */
+.work-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* ACTIVE CARD EXPANSION */
+.work-card.active {
+    width: 400px;
+}
+
+/* WORK DETAILS DISPLAY */
+.work-details {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #111;
+    color: #ddd;
+    border: 1px solid #444;
+    border-radius: 15px;
+    min-height: 150px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ================================
+   SMOOTH SCROLLING
+   ================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================================
+   FALLING HOT WINGS ANIMATION (FOR KFC)
+   ================================ */
+
+.falling-wings::before {
+    content: '';
+    background: url('images/hotwing.png') no-repeat center;
+    background-size: 30px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(400px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/*ADDIND FILES TO HANDLE DESCRIPTION EXPANSION*/
+
+/* Work Cards Container */
+.work-cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Individual Work Card */
+.work-card {
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 15px;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.work-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.work-card h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.work-duration {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+/* Work Description Styling */
+.work-description {
+    display: none;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+/* Expanded Card with Description */
+.work-card.active {
+    width: 400px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.work-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+.section-content {
+    transition: visibility 0s, opacity 0.5s ease;
+}
+
+/* Projects Section Styling */
+/* Projects Section Styling */
+/* Projects Section Styling */
+/* Projects Section Styling */
+/* Projects Section Styling */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Timeline Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    width: 4px;
+    height: 100%;
+    background: #b88df6;
+    border-radius: 2px;
+}
+
+/* Timeline Item */
+.timeline-item {
+    position: relative;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0 20px 50px; /* Added left margin to align with the timeline */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Timeline Date Styling */
+.timeline-date {
+    font-weight: bold;
+    color: #b88df6;
+    margin-bottom: 10px;
+}
+
+/* Expandable Description */
+.project-details {
+    display: none;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+/* Highlight Active Project */
+.timeline-item.active {
+    border: 2px solid #b88df6;
+    box-shadow: 0 0 15px rgba(184, 141, 246, 0.7);
+}
+
+/* Ensure No Horizontal Overflow */
+body {
+    overflow-x: hidden;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        margin-left: 30px;
+        padding: 15px;
+    }
+}
+
+
+
+/* Skills Section Styling */
+/* Skills Section Styling */
+/* Skills Section Styling */
+/* Skills Section Styling */
+
+/* ================================
+   SKILLS SECTION - HORIZONTAL LAYOUT
+   ================================ */
+
+   .skills-horizontal {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 45%; /* Adjust width for two-column layout */
+    padding: 10px;
+}
+
+.skill-item span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    width: 100px; /* Fixed width for skill name */
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    line-height: 20px;
+    text-align: right;
+    padding-right: 10px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    animation: fill 2s ease forwards;
+}
+
+
+/* Specific Colors for Each Skill */
+.python { background-color: #ffde57; width: 85%; }
+.java { background-color: #f89820; width: 75%; }
+.cplusplus { background-color: #6295cb; width: 65%; }
+.csharp { background-color: #68217a; width: 60%; }
+
+/* Animation for Progress Bars */
+@keyframes fill {
+    from { width: 0; }
+    to { width: inherit; }
+}
+
+.skill-item:hover .progress-bar {
+    transform: scaleX(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+.skills-tagline {
+    font-style: italic;
+    color: #b88df6;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* Hobbies Section Styling */
+.hobbies-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hobbies-title {
+    font-size: 1.5rem;
+    color: #b88df6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hobbies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hobby-card {
+    background-color: #444;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.hobby-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(184, 141, 246, 0.3);
+}
+
+.hobby-card:hover {
+    background-color: #b88df6;
+    color: #1a1a1a;
+}
+
+/* Animation for Progress Bars */
+@keyframes fill {
+    from { width: 0; }
+    to { width: inherit; }
+}
+
+
+
+
+
+/* Add spacing between major sections */
+.section {
+    margin-bottom: 80px; /* Increase margin for better separation */
+}
+
+#skills {
+    margin-bottom: 100px; /* Extra spacing before the skills section */
+}
+
+#skills + .hobbies-container {
+    margin-top: 60px; /* Spacing between skills and hobbies */
+}
+
+/*ADD SECTION INDICATOR */
+.nav-links a.active {
+    color: #b88df6;
+    border-left: 3px solid #b88df6;
+    padding-left: 10px;
+}
+
+.progress-bar:hover .progress {
+    background-color: #b88df6;
+    transition: background-color 0.3s ease;
+}
+.timeline-item:hover {
+    transform: translateX(10px);
+    transition: transform 0.3s ease;
+}
+

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">J</div>
+            <ul class="nav-links">
+                <li><a href="#intro" class="active">Intro</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <section id="intro" class="active-section">
+                <div class="intro-content">
+                    <h1>Hello there! I’m a Computer Engineer.<br>
+                        <span class="joke">I turn coffee into code and bugs into features.</span>
+                    </h1>
+                </div>
+                <div class="intro-image">
+                    <img src="images/my-photo.jpg" alt="My Picture">
+                </div>
+            </section>
+            
+            <!-- WORK Content -->
+            <section id="work" class="section-content">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="work-cards">
+                    <div class="work-card" onclick="showDetails(this, 'kfc')">
+                        <img src="images/kfc.jpg" alt="KFC">
+                        <h3>KFC</h3>
+                        <p class="work-duration">May 2023 - June 2024</p>
+                        <div class="work-description">
+                            <p><strong>Role:</strong> Team Member</p>
+                            <p>Provided excellent customer service, managed orders, maintained cleanliness, and worked efficiently in a high-paced environment.</p>
+                        </div>
+                    </div>
+            
+                    <div class="work-card" onclick="showDetails(this, 'sainsburys')">
+                        <img src="images/sainsburys.jpg" alt="Sainsbury's">
+                        <h3>Sainsbury's</h3>
+                        <p class="work-duration">July 2023 - March 2024</p>
+                        <div class="work-description">
+                            <p><strong>Role:</strong> Online Assistant</p>
+                            <p>Processed online orders, ensured timely deliveries, organized stock, and assisted customers with inquiries both online and in-store.</p>
+                        </div>
+                    </div>
+            
+                    <div class="work-card" onclick="showDetails(this, 'burgerking')">
+                        <img src="images/burgerking.jpg" alt="Burger King">
+                        <h3>Burger King</h3>
+                        <p class="work-duration">April 2024 - Present</p>
+                        <div class="work-description">
+                            <p><strong>Role:</strong> Crew Member</p>
+                            <p>Prepared food orders, handled customer interactions, maintained hygiene standards, and ensured quality service during peak hours.</p>
+                        </div>
+                    </div>
+            
+                    <div class="work-card" onclick="showDetails(this, 'evri')">
+                        <img src="images/evri.jpg" alt="Evri">
+                        <h3>Evri</h3>
+                        <p class="work-duration">March 2023 - May 2023</p>
+                        <div class="work-description">
+                            <p><strong>Role:</strong> Warehouse Operative</p>
+                            <p>Organized packages, sorted deliveries, managed inventory, and ensured smooth logistics operations within tight deadlines.</p>
+                        </div>
+                    </div>
+            
+                    <div class="work-card" onclick="showDetails(this, 'healthcare')">
+                        <img src="images/healthcare.jpg" alt="Healthcare Assistant">
+                        <h3>Healthcare Assistant</h3>
+                        <p class="work-duration">March 2022 - January 2023</p>
+                        <div class="work-description">
+                            <p><strong>Role:</strong> Healthcare Assistant</p>
+                            <p>Assisted patients with daily activities, monitored health conditions, and provided compassionate care in a healthcare facility.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <!-- PROJECTs Content -->
+            
+
+            <section id="projects" class="section">
+                <h2>Projects</h2>
+                <div class="timeline">
+                    
+                    <div class="timeline-item" onclick="toggleDetails(this)">
+                        <div class="timeline-date">March 2024 – April 2024</div>
+                        <div class="timeline-content">
+                            <h3>Question Answering Model with BERT Implementation</h3>
+                            <p>Developed a BERT-based question answering system to enhance interactions within anime-focused content.</p>
+                            <div class="project-details">
+                                <p><strong>Languages:</strong> Python</p>
+                                <p><strong>Tools:</strong> Google Colab, Simple Transformers</p>
+                                <p>Trained the model on custom datasets to answer anime-related questions with high accuracy.</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="timeline-item" onclick="toggleDetails(this)">
+                        <div class="timeline-date">February 2023 – May 2023</div>
+                        <div class="timeline-content">
+                            <h3>Information System Analysis and Design</h3>
+                            <p>Conducted feasibility studies, derived requirements, and presented high-level solutions for system design.</p>
+                            <div class="project-details">
+                                <p><strong>Tools:</strong> C4 Diagrams, Visual Paradigm Online</p>
+                                <p>Created detailed design documents to improve system efficiency and scalability.</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="timeline-item" onclick="toggleDetails(this)">
+                        <div class="timeline-date">November 2022 – January 2023</div>
+                        <div class="timeline-content">
+                            <h3>Modern Application Development Project</h3>
+                            <p>Designed a modern application with interactive displays and implemented authentication systems.</p>
+                            <div class="project-details">
+                                <p><strong>Languages:</strong> C#</p>
+                                <p><strong>Tools:</strong> Visual Studio, ASP.NET Blazor, MS SQL Server</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="timeline-item" onclick="toggleDetails(this)">
+                        <div class="timeline-date">November 2022 – January 2023</div>
+                        <div class="timeline-content">
+                            <h3>Entrepreneurship Support System Development</h3>
+                            <p>Formulated UML diagrams and developed a prototype application using incremental development.</p>
+                            <div class="project-details">
+                                <p><strong>Languages:</strong> Python</p>
+                                <p><strong>Tools:</strong> VSCode, SQLite3</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="timeline-item" onclick="toggleDetails(this)">
+                        <div class="timeline-date">October 2022 – November 2022</div>
+                        <div class="timeline-content">
+                            <h3>Design and Implementation of a Database</h3>
+                            <p>Developed a relational data model and executed SQL constructs for business solutions.</p>
+                            <div class="project-details">
+                                <p><strong>Languages:</strong> MySQL</p>
+                                <p><strong>Tools:</strong> MySQL Workbench</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="timeline-item" onclick="toggleDetails(this)">
+                        <div class="timeline-date">March 2022 – May 2022</div>
+                        <div class="timeline-content">
+                            <h3>Lending Library Application Development</h3>
+                            <p>Created a library system with UML diagrams and Javadoc documentation.</p>
+                            <div class="project-details">
+                                <p><strong>Languages:</strong> Java</p>
+                                <p><strong>Tools:</strong> Eclipse, Violet UML Editor</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="timeline-item" onclick="toggleDetails(this)">
+                        <div class="timeline-date">March 2022 – May 2022</div>
+                        <div class="timeline-content">
+                            <h3>SysOps Scripting</h3>
+                            <p>Developed an offsite backup solution using FTP daemons and automated execution with cron jobs.</p>
+                            <div class="project-details">
+                                <p><strong>Languages:</strong> Bash</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+            </section>
+            
+            <!-- SKILLS Section -->
+            <!-- SKILLS Section -->
+            <!-- SKILLS Section -->
+
+            <section id="skills" class="section">
+                <h2>Skills</h2>
+                <p class="skills-tagline">“Coding skills so sharp, they cut bugs in half!”</p>
+
+                <div class="skills-horizontal">
+                    <div class="skill-item">
+                        <span>🐍 Python</span>
+                        <div class="progress-bar"><div class="progress python">85%</div></div>
+                    </div>
+            
+                    <div class="skill-item">
+                        <span>☕ Java</span>
+                        <div class="progress-bar"><div class="progress java">75%</div></div>
+                    </div>
+            
+                    <div class="skill-item">
+                        <span>💻 C++</span>
+                        <div class="progress-bar"><div class="progress cplusplus">65%</div></div>
+                    </div>
+            
+                    <div class="skill-item">
+                        <span>🔷 C#</span>
+                        <div class="progress-bar"><div class="progress csharp">60%</div></div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            
+                <!-- Hobbies Section -->
+                <div class="hobbies-container">
+                    <h3 class="hobbies-title">Hobbies</h3>
+                    <div class="hobbies-grid">
+                        <div class="hobby-card">
+                            🎮 <span>Playing Video Games</span>
+                        </div>
+                        <div class="hobby-card">
+                            📸 <span>Photography</span>
+                        </div>
+                        <div class="hobby-card">
+                            🎵 <span>Listening to Music</span>
+                        </div>
+                        <div class="hobby-card">
+                            📺 <span>Watching Anime</span>
+                        </div>
+                        <div class="hobby-card">
+                            💻 <span>Exploring New Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
