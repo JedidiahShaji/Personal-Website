@@ -570,3 +570,38 @@ body {
     transition: transform 0.3s ease;
 }
 
+                                                                        /* PHASE 2 */
+
+
+
+
+/* Logo Styling */
+/* Logo Styling */
+/* Logo Styling */
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center; /* Aligns the "J" and full name on the same baseline */
+}
+
+/* Full Name Styling */
+.full-name {
+    display: inline-block;
+    color: #fff;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    margin-left: 0; /* Ensures no gap */
+}
+
+/* Hover Effect to Reveal the Full Name */
+.logo:hover .full-name {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
