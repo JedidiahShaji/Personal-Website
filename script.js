@@ -28,11 +28,17 @@ const jobDetails = {
         <p><strong>Role:</strong> Healthcare Assistant</p>
         <p><strong>Duration:</strong> March 2022 - January 2023</p>
         <p>Assisted patients with daily activities, monitored health conditions, and provided compassionate care in a healthcare facility.</p>
+    `,
+    ieee: `
+        <h3>IEEE Bolton Chapter</h3>
+        <p><strong>Role:</strong> Public Relations Officer</p>
+        <p><strong>Duration:</strong> September 2022 - June 2023</p>
+        <p>Organized events, managed communications, and promoted IEEE activities within the university community.</p>
     `
 };
 
-// Function to show job details
-function showDetails(card) {
+// Function to show the details descriptions
+function showDetails(card, job) {
     const allCards = document.querySelectorAll('.work-card');
     const allDescriptions = document.querySelectorAll('.work-description');
 
@@ -43,56 +49,75 @@ function showDetails(card) {
     // Activate the selected card and show its description
     card.classList.add('active');
     const description = card.querySelector('.work-description');
-    description.style.display = 'block';
+    if (description) {
+        description.style.display = 'block';
+    }
 }
+
+// Hide details when clicking outside the work cards
+document.addEventListener('click', function (event) {
+    const workCards = document.querySelectorAll('.work-card');
+    const isClickInsideCard = Array.from(workCards).some(card => card.contains(event.target));
+
+    if (!isClickInsideCard) {
+        workCards.forEach(card => card.classList.remove('active'));
+        const allDescriptions = document.querySelectorAll('.work-description');
+        allDescriptions.forEach(desc => desc.style.display = 'none');
+    }
+});
+
 
 // Navigation Links for Smooth Scrolling
 document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll(".nav-links a");
-    const sections = document.querySelectorAll(".section-content");
+    const sections = document.querySelectorAll("section");
 
+    // Scroll to the top on page load
+    window.scrollTo(0, 0);
+
+    // Smooth scrolling when a nav link is clicked
     links.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
             const targetId = this.getAttribute("href").substring(1);
-
-            // Hide all sections
-            sections.forEach(section => {
-                section.style.visibility = "hidden";
-                section.style.opacity = "0";
-                section.style.position = "absolute";
-            });
-
-            // Show the target section
             const targetSection = document.getElementById(targetId);
-            targetSection.style.visibility = "visible";
-            targetSection.style.opacity = "1";
-            targetSection.style.position = "relative";
 
-            // Scroll to the target section
+            // Scroll to the target section smoothly
             targetSection.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
             });
 
-            // Highlight the active link
+            // Highlight the clicked link
             links.forEach(link => link.classList.remove("active"));
             this.classList.add("active");
+
+            // Ensure all sections are visible when navigating
+            sections.forEach(section => {
+                section.style.visibility = "visible";
+                section.style.opacity = "1";
+                section.style.position = "relative";
+            });
         });
     });
 
-    // Intersection Observer for Active Navigation Link
+    // Intersection Observer to update active nav link based on scrolling
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 links.forEach(link => link.classList.remove("active"));
-                document.querySelector(`.nav-links a[href="#${entry.target.id}"]`).classList.add("active");
+                const targetLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                if (targetLink) {
+                    targetLink.classList.add("active");
+                }
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 }); // Adjusted threshold for more reliable detection
 
+    // Observe each section
     sections.forEach(section => observer.observe(section));
 });
+
 
 function toggleDetails(element) {
     // Close all other open project details

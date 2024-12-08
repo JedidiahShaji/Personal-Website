@@ -29,7 +29,9 @@
             <section id="intro" class="active-section">
                 <div class="intro-content">
                     <h1>Hello there! I’m a Computer Engineer.<br>
-                        <span class="joke">I turn coffee into code and bugs into features.</span>
+                        <p class="joke">
+                            I turn <span class="coffee">coffee</span> into <span class="code">code</span> and <span class="bugs">bugs</span> into <span class="features">features</span>.
+                        </p> 
                     </h1>
                 </div>
                 <div class="intro-image">
@@ -41,6 +43,17 @@
             <section id="work" class="section-content">
                 <h2 class="section-title">Work Experience</h2>
                 <div class="work-cards">
+            
+                    <div class="work-card current-job" onclick="showDetails(this, 'burgerking')">
+                        <img src="images/burgerking.jpg" alt="Burger King">
+                        <h3>Burger King</h3>
+                        <p class="work-duration">April 2024 - Present</p>
+                        <div class="work-description">
+                            <p><strong>Role:</strong> Crew Member</p>
+                            <p>Prepared food orders, handled customer interactions, maintained hygiene standards, and ensured quality service during peak hours.</p>
+                        </div>
+                    </div>
+            
                     <div class="work-card" onclick="showDetails(this, 'kfc')">
                         <img src="images/kfc.jpg" alt="KFC">
                         <h3>KFC</h3>
@@ -58,16 +71,6 @@
                         <div class="work-description">
                             <p><strong>Role:</strong> Online Assistant</p>
                             <p>Processed online orders, ensured timely deliveries, organized stock, and assisted customers with inquiries both online and in-store.</p>
-                        </div>
-                    </div>
-            
-                    <div class="work-card" onclick="showDetails(this, 'burgerking')">
-                        <img src="images/burgerking.jpg" alt="Burger King">
-                        <h3>Burger King</h3>
-                        <p class="work-duration">April 2024 - Present</p>
-                        <div class="work-description">
-                            <p><strong>Role:</strong> Crew Member</p>
-                            <p>Prepared food orders, handled customer interactions, maintained hygiene standards, and ensured quality service during peak hours.</p>
                         </div>
                     </div>
             
@@ -90,8 +93,19 @@
                             <p>Assisted patients with daily activities, monitored health conditions, and provided compassionate care in a healthcare facility.</p>
                         </div>
                     </div>
+
+                    <div class="work-card voluntary" onclick="showDetails(this, 'ieee')">
+                        <img src="images/ieee.png" alt="IEEE Logo">
+                        <h3>IEEE Bolton Chapter</h3>
+                        <p>Public Relations Officer</p>
+                        <p>September 2022 - June 2023</p>
+                        <span class="voluntary-badge">Voluntary</span>
+                    </div>
+                    
+            
                 </div>
             </section>
+            
             
             
             <!-- PROJECTs Content -->
@@ -216,6 +230,17 @@
                         <span>🔷 C#</span>
                         <div class="progress-bar"><div class="progress csharp">60%</div></div>
                     </div>
+
+                    <div class="skill-item">
+                        <span>🛢️ MySQL</span>
+                        <div class="progress-bar"><div class="progress MySQL">85%</div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <span>🛢️ R</span>
+                        <div class="progress-bar"><div class="progress R ">60%</div></div>
+                    </div>
+
                 </div>
             </section>
             
@@ -238,7 +263,10 @@
                             📺 <span>Watching Anime</span>
                         </div>
                         <div class="hobby-card">
-                            💻 <span>Exploring New Tech</span>
+                            🚴 <span>Bike Riding</span>
+                        </div>
+                        <div class="hobby-card">
+                            💻 <span>Coding</span>
                         </div>
                     </div>
                 </div>

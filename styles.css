@@ -61,6 +61,8 @@
     color: #aaa;
 }
 
+
+
 /* ================================
    MAIN CONTENT AREA
    ================================ */
@@ -99,10 +101,39 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* JOKE - OPTION 1*/
+/*
 .joke {
     font-size: 1.5rem;
     color: #e6bbbb;
+}*/
+
+/* OPTION II */
+/* Joke Styling */
+.joke {
+    color: #fff; /* White color for the main text */
+    font-size: 1.5rem;
 }
+
+/* Specific Word Colors */
+.coffee {
+    color: #8B4513; /* Brown color for 'coffee' */
+}
+
+.code {
+    color: #00FF00; /* Green color for 'code' */
+}
+
+.bugs {
+    color: #FF0000; /* Red color for 'bugs' */
+}
+
+.features {
+    color: #6C5CE7; /* Blue theme color for 'features' */
+}
+
+
+
 
 /* INTRO IMAGE */
 .intro-image {
@@ -222,6 +253,14 @@ h1 {
     transition: all 0.3s ease-in-out;
 }
 
+
+/* Highlight for Current Job */
+.current-job {
+    border: 2px solid #ffcc00;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+}
+
+
 /* ================================
    SMOOTH SCROLLING
    ================================ */
@@ -325,6 +364,39 @@ html {
 .section-content {
     transition: visibility 0s, opacity 0.5s ease;
 }
+
+
+/* Voluntary Work Card */
+.work-card.voluntary {
+    border: 2px dashed #6a5acd; /* Subtle purple dashed border */
+    background-color: #1c1c1c;  /* Slightly different background */
+    position: relative;
+}
+
+/* Badge for Voluntary Work */
+.voluntary-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #6a5acd;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* Hover Effect */
+.work-card.voluntary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(106, 90, 205, 0.5);
+}
+
+/* Add margin to separate sections */
+.section-content {
+    margin-bottom: 100px; /* Adjust as needed for visual separation */
+}
+
 
 /* Projects Section Styling */
 /* Projects Section Styling */
@@ -465,6 +537,9 @@ body {
 .java { background-color: #f89820; width: 75%; }
 .cplusplus { background-color: #6295cb; width: 65%; }
 .csharp { background-color: #68217a; width: 60%; }
+.MySQL { background-color: #1dc3dc; width: 85%; }
+.R { background-color: #af2c2e; width: 85%; }
+
 
 /* Animation for Progress Bars */
 @keyframes fill {
