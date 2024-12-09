@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
     <div class="container">
@@ -37,6 +39,13 @@
                 <div class="intro-image">
                     <img src="images/my-photo.jpg" alt="My Picture">
                 </div>
+
+                <div class="cv-button-container">
+                    <a href="assets/cv.pdf" download="cv" class="cv-button">
+                        <i class="fas fa-download"></i> Download My CV
+                    </a>                    
+                </div>                
+                
             </section>
             
             <!-- WORK Content -->
@@ -97,10 +106,16 @@
                     <div class="work-card voluntary" onclick="showDetails(this, 'ieee')">
                         <img src="images/ieee.png" alt="IEEE Logo">
                         <h3>IEEE Bolton Chapter</h3>
-                        <p>Public Relations Officer</p>
-                        <p>September 2022 - June 2023</p>
+                        <p><strong>Role:</strong> Public Relations Officer</p>
+                        <p><strong>Duration:</strong> September 2022 - June 2023</p>
                         <span class="voluntary-badge">Voluntary</span>
+                        <div class="work-description" id="ieee-description">
+                            <p>
+                                As the Public Relations Officer (PRO) for the IEEE Bolton Chapter, I was responsible for managing the chapter's public image and communication strategies. I developed and executed outreach campaigns to promote events, fostered relationships with industry professionals and academic institutions, and ensured effective communication with members and the broader community. My role also involved coordinating social media presence, drafting press releases, and enhancing engagement through various digital platforms.
+                            </p>
+                        </div>
                     </div>
+                    
                     
             
                 </div>
@@ -205,7 +220,6 @@
             <!-- SKILLS Section -->
             <!-- SKILLS Section -->
             <!-- SKILLS Section -->
-
             <section id="skills" class="section">
                 <h2>Skills</h2>
                 <p class="skills-tagline">“Coding skills so sharp, they cut bugs in half!”</p>
@@ -213,19 +227,19 @@
                 <div class="skills-horizontal">
                     <div class="skill-item">
                         <span>🐍 Python</span>
-                        <div class="progress-bar"><div class="progress python">85%</div></div>
+                        <div class="progress-bar"><div class="progress python">89%</div></div>
                     </div>
-            
+
                     <div class="skill-item">
                         <span>☕ Java</span>
                         <div class="progress-bar"><div class="progress java">75%</div></div>
                     </div>
-            
+
                     <div class="skill-item">
                         <span>💻 C++</span>
                         <div class="progress-bar"><div class="progress cplusplus">65%</div></div>
                     </div>
-            
+
                     <div class="skill-item">
                         <span>🔷 C#</span>
                         <div class="progress-bar"><div class="progress csharp">60%</div></div>
@@ -233,19 +247,15 @@
 
                     <div class="skill-item">
                         <span>🛢️ MySQL</span>
-                        <div class="progress-bar"><div class="progress MySQL">85%</div></div>
+                        <div class="progress-bar"><div class="progress mysql">85%</div></div>
                     </div>
 
                     <div class="skill-item">
-                        <span>🛢️ R</span>
-                        <div class="progress-bar"><div class="progress R ">60%</div></div>
+                        <span>📊 R</span>
+                        <div class="progress-bar"><div class="progress r">80%</div></div>
                     </div>
-
                 </div>
-            </section>
-            
-            
-            
+
                 <!-- Hobbies Section -->
                 <div class="hobbies-container">
                     <h3 class="hobbies-title">Hobbies</h3>
@@ -271,9 +281,84 @@
                     </div>
                 </div>
             </section>
+
+            <div class="separator"></div> <!-- Separator between the skills and the contact section -->
+
+
+
+            <!-- Contact Section -->
+            <section id="contact" class="section-content">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="contact-intro">"Whether it's a question, an idea, or just to say hi – drop me a message!"</p>
+
+                <div class="contact-container">
+                    <!-- Tabs for Navigation -->
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="openTab(event, 'message')">Send a Message</button>
+                        <button class="tab-button" onclick="openTab(event, 'map')">Find Me Here</button>
+                        <button class="tab-button" onclick="openTab(event, 'connect')">Connect</button>
+                    </div>
+
+                    <!-- Send a Message Tab Content -->
+                    <!-- Send a Message Tab Content -->
+                    <div id="message" class="tab-content active-tab">
+                        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mrbgvplo" method="POST">
+                            <input type="text" name="name" id="name" placeholder="Your Name" required />
+                            <input type="email" name="email" id="email" placeholder="Your Email" required />
+                            <textarea name="message" id="message-input" placeholder="Your Message" rows="4" required></textarea>
+                            <button type="submit">Send Message</button>
+                        </form>
+                        <div id="form-response" class="form-response"></div>
+                    </div>
+
+
+
+                    <!-- Find Me Here Tab Content -->
+                    <div id="map" class="tab-content">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23744.84898502392!2d-2.256509038155267!3d53.480759093699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb1f0c0a14f9f%3A0x7c1c50d7b9c8bb84!2sManchester!5e0!3m2!1sen!2suk!4v1601234567890!5m2!1sen!2suk"
+                            width="100%"
+                            height="350"
+                            frameborder="0"
+                            style="border: 0; border-radius: 10px;"
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+
+                    <!-- Connect Tab Content -->
+                    <div id="connect" class="tab-content">
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/jedidiah-shaji-researchengineer/" target="_blank" class="social-button">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="https://github.com/JedidiahShaji" target="_blank" class="social-button">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://x.com/JedidiahShaji" target="_blank" class="social-button">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </a>
+                            <a href="https://www.instagram.com/always_jedidish/" target="_blank" class="social-button">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Font Awesome for Social Media Icons -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+  
+
+
+            
             
         </main>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+
+
