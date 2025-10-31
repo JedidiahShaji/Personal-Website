@@ -1,364 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) - FROM OLD SITE -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M7EBLKD2HS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M7EBLKD2HS');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Title changed back to your original, professional one -->
+    <title>Jedidiah Shaji | Computer Engineer Portfolio</title>
+    
+    <!-- Favicon - FROM OLD SITE -->
+    <!-- Make sure you upload 'favicon.ico' to an 'images' folder -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
+    <!-- SEO Meta Description (The strong new one) -->
+    <meta name="description" content="Personal portfolio for Jedidiah Shaji, an ML(Software) Engineer specializing in AI-driven solutions, Python, and cloud systems.">
+    <meta name="author" content="Jedidiah Shaji">
+
+    <!-- Open Graph Meta Tags (For LinkedIn, Twitter, etc.) - FROM OLD SITE -->
+    <meta property="og:title" content="Jedidiah Shaji | Computer Engineer Portfolio">
+    <meta property="og:description" content="Personal portfolio for Jedidiah Shaji, an ML(Software) Engineer specializing in AI-driven solutions, Python, and cloud systems.">
+    <!-- Make sure you upload 'preview.jpg' to an 'images' folder -->
+    <meta property="og:image" content="images/preview.jpg">
+    <meta property="og:url" content="https://jedidiah.me.uk">
+    <meta property="og:type" content="website">
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Google Fonts: Inter (Body) and Sora (Headings) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    
+    <script>
+        // Tailwind Configuration for Premium Palette and Typography
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Custom premium palette
+                        'charcoal-bg': '#0F1116',
+                        'off-white': '#ECECEC',
+                        'accent-teal': '#00ADB5',
+                        'dark-element': '#1F2229',
+                        'border-light': '#33363D',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Sora', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Base styling using the custom font families */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Sora', sans-serif;
+        }
+        /* Smooth scrolling for internal links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* 10X Upgrade: Custom styles for modal transitions */
+        .modal-container {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-panel {
+            transition: transform 0.3s ease;
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <!-- Sidebar Navigation -->
-        <nav class="sidebar">
-            <div class="logo">
-                <span class="logo-initial">J</span>
-                <span class="full-name">edidiah Shaji</span>
-            </div>                       
-            
-            <ul class="nav-links">
-                <li><a href="#intro" class="active">Intro</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+
+<body class="bg-charcoal-bg text-off-white">
+
+    <!-- NAVIGATION (Minimalist & Fixed) -->
+    <header class="sticky top-0 z-50 bg-charcoal-bg/90 backdrop-blur-sm border-b border-border-light shadow-lg">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-heading font-extrabold text-off-white tracking-tight hover:text-accent-teal transition-colors duration-300">J S</a>
+            <div class="space-x-8 hidden md:flex">
+                <a href="#projects" class="text-sm font-medium hover:text-accent-teal transition-all duration-300 transform hover:-translate-y-0.5">Projects</a>
+                <a href="#skills" class="text-sm font-medium hover:text-accent-teal transition-all duration-300 transform hover:-translate-y-0.5">Expertise</a>
+                <a href="#contact" class="text-sm font-medium hover:text-accent-teal transition-all duration-300 transform hover:-translate-y-0.5">Connect</a>
+            </div>
+            <a href="/cv/cvfile.pdf" download class="hidden sm:block button-primary">Download CV</a>
         </nav>
+    </header>
 
-        <!-- Main Content -->
-        <main class="content">
-            <section id="intro" class="active-section">
-                <div class="intro-content">
-                    <h1>Hello there! I’m a Computer Engineer.<br>
-                        <p class="joke">
-                            I turn <span class="coffee">coffee</span> into <span class="code">code</span> and <span class="bugs">bugs</span> into <span class="features">features</span>.
-                        </p> 
-                    </h1>
-                </div>
-                <div class="intro-image">
-                    <img src="images/my-photo.jpg" alt="My Picture">
-                </div>
+    <main>
+        <!-- HERO SECTION (Value Proposition Focused) -->
+        <section id="hero" class="py-32 md:py-48 px-6 text-center border-b border-border-light">
+            <div class="max-w-4xl mx-auto">
+                <p class="text-xl font-medium text-accent-teal mb-4 uppercase tracking-wider">ML (Software) Engineer & AI Enthusiast</p>
+                <h1 class="text-5xl md:text-7xl font-heading font-bold leading-tight tracking-tighter mb-8">
+                    Developing Scalable, <span class="text-accent-teal">AI-Driven Solutions.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-off-white/80 max-w-3xl mx-auto mb-10">
+                    Passionate Computer Science graduate leveraging Python, BERT, and cloud systems to transform complex data into intelligent, efficient applications.
+                </p>
 
-                <div class="cv-button-container">
-                    <a href="assets/cv.pdf" download="cv" class="cv-button">
-                        <i class="fas fa-download"></i> Download My CV
-                    </a>                    
-                </div>                
+                <div class="flex justify-center space-x-4">
+                    <a href="#projects" class="button-primary">View Featured Work</a>
+                    <a href="#contact" class="button-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS MATRIX (Clean Grid, replacing progress bars) -->
+        <section id="skills" class="py-24 md:py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-16 text-center">My Core <span class="text-accent-teal">Expertise</span></h2>
                 
-            </section>
-            
-            <!-- WORK Content -->
-            <section id="work" class="section-content">
-                <h2 class="section-title">Work Experience</h2>
-                <div class="work-cards">
-            
-                    <div class="work-card current-job" onclick="showDetails(this, 'burgerking')">
-                        <img src="images/burgerking.jpg" alt="Burger King">
-                        <h3>Burger King</h3>
-                        <p class="work-duration">April 2024 - Present</p>
-                        <div class="work-description">
-                            <p><strong>Role:</strong> Crew Member</p>
-                            <p>Prepared food orders, handled customer interactions, maintained hygiene standards, and ensured quality service during peak hours.</p>
-                        </div>
-                    </div>
-            
-                    <div class="work-card" onclick="showDetails(this, 'kfc')">
-                        <img src="images/kfc.jpg" alt="KFC">
-                        <h3>KFC</h3>
-                        <p class="work-duration">May 2023 - June 2024</p>
-                        <div class="work-description">
-                            <p><strong>Role:</strong> Team Member</p>
-                            <p>Provided excellent customer service, managed orders, maintained cleanliness, and worked efficiently in a high-paced environment.</p>
-                        </div>
-                    </div>
-            
-                    <div class="work-card" onclick="showDetails(this, 'sainsburys')">
-                        <img src="images/sainsburys.jpg" alt="Sainsbury's">
-                        <h3>Sainsbury's</h3>
-                        <p class="work-duration">July 2023 - March 2024</p>
-                        <div class="work-description">
-                            <p><strong>Role:</strong> Online Assistant</p>
-                            <p>Processed online orders, ensured timely deliveries, organized stock, and assisted customers with inquiries both online and in-store.</p>
-                        </div>
-                    </div>
-            
-                    <div class="work-card" onclick="showDetails(this, 'evri')">
-                        <img src="images/evri.jpg" alt="Evri">
-                        <h3>Evri</h3>
-                        <p class="work-duration">March 2023 - May 2023</p>
-                        <div class="work-description">
-                            <p><strong>Role:</strong> Warehouse Operative</p>
-                            <p>Organized packages, sorted deliveries, managed inventory, and ensured smooth logistics operations within tight deadlines.</p>
-                        </div>
-                    </div>
-            
-                    <div class="work-card" onclick="showDetails(this, 'healthcare')">
-                        <img src="images/healthcare.jpg" alt="Healthcare Assistant">
-                        <h3>Healthcare Assistant</h3>
-                        <p class="work-duration">March 2022 - January 2023</p>
-                        <div class="work-description">
-                            <p><strong>Role:</strong> Healthcare Assistant</p>
-                            <p>Assisted patients with daily activities, monitored health conditions, and provided compassionate care in a healthcare facility.</p>
-                        </div>
+                <!-- 10X Upgrade: Grid changed to 5 columns for new skill -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!-- Skill Card 1: Expert -->
+                    <div class="p-6 bg-dark-element rounded-xl border border-border-light hover:border-accent-teal transition-all duration-300 transform hover:shadow-xl">
+                        <svg class="w-8 h-8 text-accent-teal mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <h3 class="text-xl font-heading font-semibold mb-1">Python</h3>
+                        <p class="text-sm text-off-white/60">Data processing, backend systems, and scripting.</p>
+                        <span class="mt-3 inline-block px-3 py-1 text-xs font-medium bg-accent-teal/20 text-accent-teal rounded-full">Expert</span>
                     </div>
 
-                    <div class="work-card voluntary" onclick="showDetails(this, 'ieee')">
-                        <img src="images/ieee.png" alt="IEEE Logo">
-                        <h3>IEEE Bolton Chapter</h3>
-                        <p><strong>Role:</strong> Public Relations Officer</p>
-                        <p><strong>Duration:</strong> September 2022 - June 2023</p>
-                        <span class="voluntary-badge">Voluntary</span>
-                        <div class="work-description" id="ieee-description">
-                            <p>
-                                As the Public Relations Officer (PRO) for the IEEE Bolton Chapter, I was responsible for managing the chapter's public image and communication strategies. I developed and executed outreach campaigns to promote events, fostered relationships with industry professionals and academic institutions, and ensured effective communication with members and the broader community. My role also involved coordinating social media presence, drafting press releases, and enhancing engagement through various digital platforms.
+                    <!-- Skill Card 2: Proficient -->
+                    <div class="p-6 bg-dark-element rounded-xl border border-border-light hover:border-accent-teal transition-all duration-300 transform hover:shadow-xl">
+                        <svg class="w-8 h-8 text-accent-teal mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m-2 6h2M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z"></path></svg>
+                        <h3 class="text-xl font-heading font-semibold mb-1">Data Analysis & ML</h3>
+                        <p class="text-sm text-off-white/60">Pandas, NumPy, Scikit-Learn, BERT, and TensorFlow.</p>
+                        <span class="mt-3 inline-block px-3 py-1 text-xs font-medium bg-off-white/20 text-off-white rounded-full">Proficient</span>
+                    </div>
+
+                    <!-- Skill Card 3: Proficient -->
+                    <div class="p-6 bg-dark-element rounded-xl border border-border-light hover:border-accent-teal transition-all duration-300 transform hover:shadow-xl">
+                        <svg class="w-8 h-8 text-accent-teal mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10m0 0h12m-12 0L1 14m3 3l3-3m-3 3l-3-3m12 3V7m0 10h-6m6 0l3-3m-3 3l-3-3m3 3l3-3"></path></svg>
+                        <h3 class="text-xl font-heading font-semibold mb-1">Databases</h3>
+                        <p class="text-sm text-off-white/60">SQL, MongoDB, database design, and data modeling.</p>
+                        <span class="mt-3 inline-block px-3 py-1 text-xs font-medium bg-off-white/20 text-off-white rounded-full">Proficient</span>
+                    </div>
+                    
+                    <!-- Skill Card 4: Familiar -->
+                    <div class="p-6 bg-dark-element rounded-xl border border-border-light hover:border-accent-teal transition-all duration-300 transform hover:shadow-xl">
+                        <svg class="w-8 h-8 text-accent-teal mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg>
+                        <h3 class="text-xl font-heading font-semibold mb-1">Visualization & BI</h3>
+                        <p class="text-sm text-off-white/60">Power BI, Tableau, Streamlit, and Matplotlib.</p>
+                        <span class="mt-3 inline-block px-3 py-1 text-xs font-medium bg-off-white/10 text-off-white/70 rounded-full">Familiar</span>
+                    </div>
+
+                    <!-- 10X Upgrade: Skill Card 5 (New Skill) -->
+                    <div class="p-6 bg-dark-element rounded-xl border border-border-light hover:border-accent-teal transition-all duration-300 transform hover:shadow-xl">
+                        <svg class="w-8 h-8 text-accent-teal mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                        <h3 class="text-xl font-heading font-semibold mb-1">Cloud & SysAdmin</h3>
+                        <p class="text-sm text-off-white/60">Managing web infrastructure and corporate systems (AWS, etc.).</p>
+                        <span class="mt-3 inline-block px-3 py-1 text-xs font-medium bg-off-white/10 text-off-white/70 rounded-full">Familiar</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10X Upgrade: PROJECTS (Asymmetrical "Featured" Layout) -->
+        <section id="projects" class="py-24 md:py-32 px-6 border-t border-border-light">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-16 text-center">Featured <span class="text-accent-teal">Projects</span></h2>
+
+                <div class="flex flex-col gap-12 lg:gap-16">
+
+                    <!-- Hero Project: Cultural Appropriateness Bot -->
+                    <article class="bg-dark-element rounded-xl border border-border-light hover:border-accent-teal transition-all duration-500 overflow-hidden lg:flex">
+                        <!-- Placeholder for an image -->
+                        <div class="lg:w-2/5 bg-charcoal-bg flex items-center justify-center p-8">
+                            <svg class="w-32 h-32 text-border-light" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.206" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div class="p-8 lg:p-12 lg:w-3/5">
+                            <h3 class="text-3xl font-heading font-bold mb-2">Cultural Appropriateness Bot</h3>
+                            <p class="text-accent-teal font-medium mb-4">Python | BERT | NLP | Streamlit</p>
+                            <p class="text-off-white/80 mb-6">
+                                Developed a BERT-based AI model to classify cultural appropriateness in images and text, complete with a real-time analytics dashboard for monitoring classification trends.
                             </p>
+                            <!-- Modal Trigger Button -->
+                            <button data-modal-target="modal-project-2" class="inline-flex items-center text-accent-teal font-semibold group">
+                                View Case Study 
+                                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </button>
                         </div>
+                    </article>
+
+                    <!-- Smaller Projects Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <!-- Project Card 1: Teen Quest -->
+                        <article class="bg-dark-element rounded-xl p-8 border border-border-light hover:shadow-2xl transition-all duration-500 hover:border-accent-teal">
+                            <h3 class="text-2xl font-heading font-bold mb-2">Teen Quest Task Analysis</h3>
+                            <p class="text-accent-teal font-medium mb-4">Python | SQL | MongoDB | Flask | Streamlit</p>
+                            <p class="text-off-white/80 mb-6">
+                                Analyzed user behavior and task efficiency, optimizing task scheduling using reinforcement learning-based analytics.
+                            </p>
+                            <!-- Modal Trigger Button -->
+                            <button data-modal-target="modal-project-1" class="inline-flex items-center text-accent-teal font-semibold group">
+                                View Case Study 
+                                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </button>
+                        </article>
+                        
+                        <!-- Project Card 3: BERT QA Model -->
+                        <article class="bg-dark-element rounded-xl p-8 border border-border-light hover:shadow-2xl transition-all duration-500 hover:border-accent-teal">
+                            <h3 class="text-2xl font-heading font-bold mb-2">Question Answering Model</h3>
+                            <p class="text-accent-teal font-medium mb-4">Python | BERT | Simple Transformers</p>
+                            <p class="text-off-white/80 mb-6">
+                                Designed and implemented a QA system using transformer-based models. Processed and cleaned datasets to improve response accuracy.
+                            </p>
+                            <!-- Modal Trigger Button -->
+                            <button data-modal-target="modal-project-3" class="inline-flex items-center text-accent-teal font-semibold group">
+                                View Case Study 
+                                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </button>
+                        </article>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEADERSHIP & PROFESSIONAL EXPERIENCE -->
+        <section id="experience" class="py-24 md:py-32 px-6 border-t border-border-light bg-dark-element/50">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-16 text-center">Leadership & <span class="text-accent-teal">Experience</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     
-                    
-            
+                    <!-- Experience Card 1: Jacobs Biomedical -->
+                    <div class="bg-dark-element rounded-xl p-8 border border-border-light">
+                        <p class="text-sm text-accent-teal font-medium mb-1">2023 - PRESENT</p>
+                        <h3 class="text-2xl font-heading font-bold mb-2">Digital Infrastructure Administrator</h3>
+                        <p class="text-lg text-off-white/80 font-medium mb-4">Jacobs Biomedical Company (Freelance)</p>
+                        <p class="text-off-white/70">
+                            Architecting and managing the company's complete digital presence, including web infrastructure and corporate communication systems. Ensuring high availability and seamless scalability for business operations.
+                        </p>
+                    </div>
+
+                    <!-- Experience Card 2: IEEE -->
+                    <div class="bg-dark-element rounded-xl p-8 border border-border-light">
+                        <p class="text-sm text-accent-teal font-medium mb-1">2023 - 2024</p>
+                        <h3 class="text-2xl font-heading font-bold mb-2">Public Relations Officer (PRO)</h3>
+                        <p class="text-lg text-off-white/80 font-medium mb-4">IEEE Chapter @ University of Greater Manchester</p>
+                        <p class="text-off-white/70">
+                            Organized events, promoted IEEE initiatives, and engaged with the student community to foster a strong interest in technology, research, and professional development.
+                        </p>
+                    </div>
+
                 </div>
-            </section>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION (Minimalist CTA) -->
+        <section id="contact" class="py-24 md:py-32 px-6 text-center border-t border-border-light">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">Let's Build Something Exceptional.</h2>
+                <p class="text-lg md:text-xl text-off-white/80 mb-10">
+                    If you have a project idea, a technical challenge, or just want to connect about Computer Engineering, drop me a message.
+                </p>
+                <a href="mailto:jedidiahshaji27@gmail.com" class="button-primary text-lg px-8 py-3">Send a Message Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-6 border-t border-border-light">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm text-off-white/60">
+            <p>&copy; 2024 Jedidiah Shaji. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 sm:mt-0"> <!-- Increased spacing -->
+                <a href="https://www.linkedin.com/in/jedidiah-shaji-researchengineer/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-teal transition-colors">LinkedIn</a>
+                <a href="https://github.com/JedidiahShaji" target="_blank" rel="noopener noreferrer" class="hover:text-accent-teal transition-colors">GitHub</a>
+                <a href="https://x.com/JedidiahShaji" target="_blank" rel="noopener noreferrer" class="hover:text-accent-teal transition-colors">Twitter / X</a>
+                <a href="https://www.instagram.com/always_jedidish" target="_blank" rel="noopener noreferrer" class="hover:text-accent-teal transition-colors">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+    ============================================================
+    10X Upgrade: PROJECT MODALS & SCROLL-TO-TOP BUTTON
+    ============================================================
+    -->
+
+    <!-- Modal 1: Teen Quest -->
+    <div id="modal-project-1" class="modal-container fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm opacity-0 invisible" data-modal-close>
+        <div class="modal-panel bg-dark-element w-full max-w-3xl rounded-xl border border-border-light shadow-2xl p-8 lg:p-12 relative scale-95" data-modal-panel>
+            <!-- Close Button -->
+            <button data-modal-close class="absolute top-4 right-4 text-off-white/50 hover:text-accent-teal transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
             
+            <h2 class="text-3xl font-heading font-bold mb-2">Teen Quest Task Analysis</h2>
+            <p class="text-accent-teal font-medium mb-6">Python | SQL | MongoDB | Flask | Streamlit</p>
+
+            <div class="text-off-white/80 space-y-6 technical-description" style="max-height: 50vh; overflow-y: auto; padding-right: 1rem;">
+                <h4 class="text-xl font-heading font-semibold text-off-white">The Problem</h4>
+                <p>Modern families often struggle with effective task management, especially in multi-child households. Assigning tasks, ensuring completion, and providing appropriate rewards is challenging. This project addresses the difficulty parents face in keeping children motivated and finding a structured, fair way to assign tasks that match their skills and interests.</p>
+                
+                <h4 class="text-xl font-heading font-semibold text-off-white mt-4">The Solution</h4>
+                <p>I developed a full-stack, AI-driven task recommendation system. The solution is a web application (React, Node.js, MongoDB) where parents can manage tasks and teens can receive recommendations. The core of the system is a Reinforcement Learning (RL) model, specifically Proximal Policy Optimization (PPO), which I trained to act as an intelligent recommender. This AI agent suggests the best-suited teen for a task based on priority, skill category, and deadlines, effectively gamifying task management.</p>
+
+                <h4 class="text-xl font-heading font-semibold text-off-white mt-4">Key Technical Insights & Challenges</h4>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>Synthetic Dataset Creation:</strong> The biggest hurdle was the complete lack of real-world data for this niche problem. I solved this by engineering a robust synthetic dataset from scratch to simulate family task dynamics, which was essential for training the RL agent.</li>
+                    <li><strong>AI Integration:</strong> I successfully integrated the Python/Flask-based RL model API with the Node.js backend, creating a seamless communication flow between the web app and the AI brain.</li>
+                    <li><strong>Training & Performance:</strong> The trained PPO model achieved a high mean reward (331.23), demonstrating its effectiveness in learning the optimal policy for task assignment according to the rules I defined.</li>
+                    <li><strong>Future Scope:</strong> The initial MVP plan included a blockchain/NFT-based reward system. While deferred due to time constraints, it remains a critical next step for enhancing user engagement.</li>
+                </ul>
+            </div>
+
+            <!-- ✨ Gemini API Feature REMOVED -->
             
-            
-            <!-- PROJECTs Content -->
-            
-
-            <section id="projects" class="section">
-                <h2>Projects</h2>
-                <div class="timeline">
-                    
-                    <div class="timeline-item" onclick="toggleDetails(this)">
-                        <div class="timeline-date">March 2024 – April 2024</div>
-                        <div class="timeline-content">
-                            <h3>Question Answering Model with BERT Implementation</h3>
-                            <p>Developed a BERT-based question answering system to enhance interactions within anime-focused content.</p>
-                            <div class="project-details">
-                                <p><strong>Languages:</strong> Python</p>
-                                <p><strong>Tools:</strong> Google Colab, Simple Transformers</p>
-                                <p>Trained the model on custom datasets to answer anime-related questions with high accuracy.</p>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="timeline-item" onclick="toggleDetails(this)">
-                        <div class="timeline-date">February 2023 – May 2023</div>
-                        <div class="timeline-content">
-                            <h3>Information System Analysis and Design</h3>
-                            <p>Conducted feasibility studies, derived requirements, and presented high-level solutions for system design.</p>
-                            <div class="project-details">
-                                <p><strong>Tools:</strong> C4 Diagrams, Visual Paradigm Online</p>
-                                <p>Created detailed design documents to improve system efficiency and scalability.</p>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="timeline-item" onclick="toggleDetails(this)">
-                        <div class="timeline-date">November 2022 – January 2023</div>
-                        <div class="timeline-content">
-                            <h3>Modern Application Development Project</h3>
-                            <p>Designed a modern application with interactive displays and implemented authentication systems.</p>
-                            <div class="project-details">
-                                <p><strong>Languages:</strong> C#</p>
-                                <p><strong>Tools:</strong> Visual Studio, ASP.NET Blazor, MS SQL Server</p>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="timeline-item" onclick="toggleDetails(this)">
-                        <div class="timeline-date">November 2022 – January 2023</div>
-                        <div class="timeline-content">
-                            <h3>Entrepreneurship Support System Development</h3>
-                            <p>Formulated UML diagrams and developed a prototype application using incremental development.</p>
-                            <div class="project-details">
-                                <p><strong>Languages:</strong> Python</p>
-                                <p><strong>Tools:</strong> VSCode, SQLite3</p>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="timeline-item" onclick="toggleDetails(this)">
-                        <div class="timeline-date">October 2022 – November 2022</div>
-                        <div class="timeline-content">
-                            <h3>Design and Implementation of a Database</h3>
-                            <p>Developed a relational data model and executed SQL constructs for business solutions.</p>
-                            <div class="project-details">
-                                <p><strong>Languages:</strong> MySQL</p>
-                                <p><strong>Tools:</strong> MySQL Workbench</p>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="timeline-item" onclick="toggleDetails(this)">
-                        <div class="timeline-date">March 2022 – May 2022</div>
-                        <div class="timeline-content">
-                            <h3>Lending Library Application Development</h3>
-                            <p>Created a library system with UML diagrams and Javadoc documentation.</p>
-                            <div class="project-details">
-                                <p><strong>Languages:</strong> Java</p>
-                                <p><strong>Tools:</strong> Eclipse, Violet UML Editor</p>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="timeline-item" onclick="toggleDetails(this)">
-                        <div class="timeline-date">March 2022 – May 2022</div>
-                        <div class="timeline-content">
-                            <h3>SysOps Scripting</h3>
-                            <p>Developed an offsite backup solution using FTP daemons and automated execution with cron jobs.</p>
-                            <div class="project-details">
-                                <p><strong>Languages:</strong> Bash</p>
-                            </div>
-                        </div>
-                    </div>
-            
-                </div>
-            </section>
-            
-            <!-- SKILLS Section -->
-            <!-- SKILLS Section -->
-            <!-- SKILLS Section -->
-            <section id="skills" class="section">
-                <h2>Skills</h2>
-                <p class="skills-tagline">“Coding skills so sharp, they cut bugs in half!”</p>
-
-                <div class="skills-horizontal">
-                    <div class="skill-item">
-                        <span>🐍 Python</span>
-                        <div class="progress-bar"><div class="progress python">89%</div></div>
-                    </div>
-
-                    <div class="skill-item">
-                        <span>☕ Java</span>
-                        <div class="progress-bar"><div class="progress java">75%</div></div>
-                    </div>
-
-                    <div class="skill-item">
-                        <span>💻 C++</span>
-                        <div class="progress-bar"><div class="progress cplusplus">65%</div></div>
-                    </div>
-
-                    <div class="skill-item">
-                        <span>🔷 C#</span>
-                        <div class="progress-bar"><div class="progress csharp">60%</div></div>
-                    </div>
-
-                    <div class="skill-item">
-                        <span>🛢️ MySQL</span>
-                        <div class="progress-bar"><div class="progress mysql">85%</div></div>
-                    </div>
-
-                    <div class="skill-item">
-                        <span>📊 R</span>
-                        <div class="progress-bar"><div class="progress r">80%</div></div>
-                    </div>
-                </div>
-
-                <!-- Hobbies Section -->
-                <div class="hobbies-container">
-                    <h3 class="hobbies-title">Hobbies</h3>
-                    <div class="hobbies-grid">
-                        <div class="hobby-card">
-                            🎮 <span>Playing Video Games</span>
-                        </div>
-                        <div class="hobby-card">
-                            📸 <span>Photography</span>
-                        </div>
-                        <div class="hobby-card">
-                            🎵 <span>Listening to Music</span>
-                        </div>
-                        <div class="hobby-card">
-                            📺 <span>Watching Anime</span>
-                        </div>
-                        <div class="hobby-card">
-                            🚴 <span>Bike Riding</span>
-                        </div>
-                        <div class="hobby-card">
-                            💻 <span>Coding</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="separator"></div> <!-- Separator between the skills and the contact section -->
-
-
-
-            <!-- Contact Section -->
-            <section id="contact" class="section-content">
-                <h2 class="section-title">Get in Touch</h2>
-                <p class="contact-intro">"Whether it's a question, an idea, or just to say hi – drop me a message!"</p>
-
-                <div class="contact-container">
-                    <!-- Tabs for Navigation -->
-                    <div class="tabs">
-                        <button class="tab-button active" onclick="openTab(event, 'message')">Send a Message</button>
-                        <button class="tab-button" onclick="openTab(event, 'map')">Find Me Here</button>
-                        <button class="tab-button" onclick="openTab(event, 'connect')">Connect</button>
-                    </div>
-
-                    <!-- Send a Message Tab Content -->
-                    <!-- Send a Message Tab Content -->
-                    <div id="message" class="tab-content active-tab">
-                        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mrbgvplo" method="POST">
-                            <input type="text" name="name" id="name" placeholder="Your Name" required />
-                            <input type="email" name="email" id="email" placeholder="Your Email" required />
-                            <textarea name="message" id="message-input" placeholder="Your Message" rows="4" required></textarea>
-                            <button type="submit">Send Message</button>
-                        </form>
-                        <div id="form-response" class="form-response"></div>
-                    </div>
-
-
-
-                    <!-- Find Me Here Tab Content -->
-                    <div id="map" class="tab-content">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23744.84898502392!2d-2.256509038155267!3d53.480759093699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb1f0c0a14f9f%3A0x7c1c50d7b9c8bb84!2sManchester!5e0!3m2!1sen!2suk!4v1601234567890!5m2!1sen!2suk"
-                            width="100%"
-                            height="350"
-                            frameborder="0"
-                            style="border: 0; border-radius: 10px;"
-                            allowfullscreen
-                            loading="lazy">
-                        </iframe>
-                    </div>
-
-                    <!-- Connect Tab Content -->
-                    <div id="connect" class="tab-content">
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/jedidiah-shaji-researchengineer/" target="_blank" class="social-button">
-                                <i class="fab fa-linkedin"></i> LinkedIn
-                            </a>
-                            <a href="https://github.com/JedidiahShaji" target="_blank" class="social-button">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="https://x.com/JedidiahShaji" target="_blank" class="social-button">
-                                <i class="fab fa-twitter"></i> Twitter
-                            </a>
-                            <a href="https://www.instagram.com/always_jedidish/" target="_blank" class="social-button">
-                                <i class="fab fa-instagram"></i> Instagram
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Font Awesome for Social Media Icons -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-
-  
-
-
-            
-            
-        </main>
+        </div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Modal 2: Cultural Appropriateness Bot -->
+    <div id="modal-project-2" class="modal-container fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm opacity-0 invisible" data-modal-close>
+        <div class="modal-panel bg-dark-element w-full max-w-3xl rounded-xl border border-border-light shadow-2xl p-8 lg:p-12 relative scale-95" data-modal-panel>
+            <!-- Close Button -->
+            <button data-modal-close class="absolute top-4 right-4 text-off-white/50 hover:text-accent-teal transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <h2 class="text-3xl font-heading font-bold mb-2">Cultural Appropriateness Bot</h2>
+            <p class="text-accent-teal font-medium mb-6">Python | BERT | NLP | Streamlit</p>
+
+            <div class="text-off-white/80 space-y-6 technical-description" style="max-height: 50vh; overflow-y: auto; padding-right: 1rem;">
+                <h4 class="text-xl font-heading font-semibold text-off-white">The Problem</h4>
+                <p>Mainstream AI models are "culturally blind" and often perpetuate racial and cultural biases. AI image generators create stereotypes, and content moderation tools fail to understand cultural nuances, leading to miscommunication and harmful outputs. This project tackles this problem: the critical lack of culturally aware AI systems, specifically within the Indian cultural context.</p>
+                
+                <h4 class="text-xl font-heading font-semibold text-off-white mt-4">The Solution</h4>
+                <p>I developed a "Cultural Appropriateness Bot" that classifies text as culturally "Appropriate," "Inappropriate," or "Neutral." The core of the solution was building a fine-tuned BERT-based model. Since no public dataset existed for this task, I engineered a high-quality, fully synthetic dataset (named CST02) using GPT-4, focusing entirely on nuanced Indian cultural scenarios. This model achieved a **94% test accuracy**. I also built a complete ecosystem around it: a Flask-based web UI for users to test sentences and a Streamlit dashboard for admins to analyze model performance and user feedback.</p>
+
+                <h4 class="text-xl font-heading font-semibold text-off-white mt-4">Key Technical Insights & Challenges</h4>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>Project Pivot:</strong> The initial scope included both text and image analysis. However, due to the extreme scarcity of culturally-specific image datasets, I made the strategic decision to pivot exclusively to text-based analysis.</li>
+                    <li><strong>Synthetic Dataset Engineering:</strong> My first attempt (CST01), a hybrid of existing and synthetic data, underperformed. The solution was to create the fully synthetic CST02, which proved far more effective and balanced, validating the use of LLMs for creating niche datasets.</li>
+                    <li><strong>Model Performance:</strong> The fine-tuned BERT model demonstrated high precision (0.98) for "Inappropriate" content, proving its efficacy in detecting culturally sensitive language.</li>
+                    <li><strong>Limitations:</strong> The model is currently focused only on the Indian context. A future goal is to expand this to other cultures and implement a system where user feedback dynamically retrains the model.</li>
+                </ul>
+            </div>
+
+            <!-- ✨ Gemini API Feature REMOVED -->
+            
+        </div>
+    </div>
+
+    <!-- Modal 3: QA Model -->
+    <div id="modal-project-3" class="modal-container fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm opacity-0 invisible" data-modal-close>
+        <div class="modal-panel bg-dark-element w-full max-w-3xl rounded-xl border border-border-light shadow-2xl p-8 lg:p-12 relative scale-95" data-modal-panel>
+            <!-- Close Button -->
+            <button data-modal-close class="absolute top-4 right-4 text-off-white/50 hover:text-accent-teal transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <h2 class="text-3xl font-heading font-bold mb-2">Question Answering Model</h2>
+            <p class="text-accent-teal font-medium mb-6">Python | BERT | Simple Transformers</p>
+
+            <div class="text-off-white/80 space-y-6 technical-description" style="max-height: 50vh; overflow-y: auto; padding-right: 1rem;">
+                <h4 class="text-xl font-heading font-semibold text-off-white">The Problem</h4>
+                <p>There is often a gap between pure entertainment and effective education. This project explores how to bridge that gap by creating an engaging tool that leverages a popular medium (anime) to provide valuable, factual information (science and culture).</p>
+                
+                <h4 class="text-xl font-heading font-semibold text-off-white mt-4">The Solution</h4>
+                <p>I developed a specialized, BERT-based Question-Answering (QA) system designed to engage with anime-themed content. I used the `bert-base-uncased` model and fine-tuned it using the Simple Transformers library. The model was trained on a diverse, custom-built dataset comprising anime transcripts, fan discussions, and related scientific concepts, allowing it to interpret and respond to user queries with high accuracy.</p>
+
+                <h4 class="text-xl font-heading font-semibold text-off-white mt-4">Key Technical Insights & Challenges</h4>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>Model Performance:</strong> The system proved highly effective, successfully returning high-confidence answers (e.g., 98% probability for a *Sword Art Online* query) and accurately explaining scientific concepts like nuclear fission.</li>
+                    <li><strong>Handling Ambiguity:</strong> A key challenge was the model's response to ambiguous or less-represented content, where it would occasionally return an empty answer. This highlights a clear area for future improvement by expanding the dataset.</li>
+                    <li><strong>Evaluation Metrics:</strong> The model was rigorously evaluated using standard NLP metrics, including Exact Match (EM) and F1 Score, to assess both accuracy and efficiency.</li>
+                    <li><strong>Future Scope:</strong> The success of this QA system serves as a strong proof-of-concept for a much larger future project: a comprehensive, full-fledged anime learning platform for enthusiasts.</li>
+                </ul>
+            </div>
+
+            <!-- ✨ Gemini API Feature REMOVED -->
+            
+        </div>
+    </div>
+
+
+    <!-- Scroll to Top Button -->
+    <a href="#hero" id="scrollTopButton" class="fixed bottom-8 right-8 z-40 p-3 bg-dark-element border border-border-light rounded-full text-accent-teal hover:bg-accent-teal hover:text-charcoal-bg shadow-lg transition-all duration-300 opacity-0 invisible">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+    </a>
+    
+
+    <!-- 10X Upgrade: JavaScript for Modals and Scroll Button -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Scroll to Top Button Logic ---
+            const scrollTopButton = document.getElementById('scrollTopButton');
+
+            window.addEventListener('scroll', () => {
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    scrollTopButton.classList.remove('opacity-0', 'invisible');
+                    scrollTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollTopButton.classList.remove('opacity-100', 'visible');
+                    scrollTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+
+            // --- Modal Logic ---
+            const modalTriggers = document.querySelectorAll('[data-modal-target]');
+            const modalCloseButtons = document.querySelectorAll('[data-modal-close]');
+            const modalPanels = document.querySelectorAll('[data-modal-panel]');
+
+            const openModal = (modal) => {
+                modal.classList.remove('opacity-0', 'invisible');
+                modal.classList.add('opacity-100', 'visible');
+                modal.querySelector('[data-modal-panel]').classList.remove('scale-95');
+                modal.querySelector('[data-modal-panel]').classList.add('scale-100');
+                document.body.style.overflow = 'hidden'; // Lock background scroll
+            };
+
+            const closeModal = (modal) => {
+                modal.classList.add('opacity-0', 'invisible');
+                modal.classList.remove('opacity-100', 'visible');
+                modal.querySelector('[data-modal-panel]').classList.add('scale-95');
+                modal.querySelector('[data-modal-panel]').classList.remove('scale-100');
+                document.body.style.overflow = 'auto'; // Unlock background scroll
+            };
+
+            // Open modal triggers
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const modalId = trigger.getAttribute('data-modal-target');
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        openModal(modal);
+                    }
+                });
+            });
+
+            // Close modal buttons (X button and backdrop)
+            modalCloseButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const modal = event.target.closest('.modal-container');
+                    if (modal) {
+                        closeModal(modal);
+                    }
+                });
+            });
+            
+            // Prevent modal from closing when clicking on the panel itself
+            modalPanels.forEach(panel => {
+               panel.addEventListener('click', (event) => {
+                   event.stopPropagation();
+               });
+            });
+
+            // Close modal with Escape key
+            window.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    document.querySelectorAll('.modal-container.visible').forEach(closeModal);
+                }
+            });
+
+            // --- ✨ Gemini API Logic REMOVED ---
+            
+
+        });
+    </script>
+
+
+    <!-- Custom Button Styles (reusable) -->
+    <style>
+        .button-primary {
+            @apply inline-flex items-center px-6 py-2 border-2 border-accent-teal text-base font-medium rounded-lg shadow-lg bg-accent-teal text-charcoal-bg transition-all duration-300 transform hover:scale-[1.03] hover:shadow-xl hover:shadow-accent-teal/30 hover:brightness-110;
+        }
+
+        .button-secondary {
+            @apply inline-flex items-center px-6 py-2 border-2 border-border-light text-base font-medium rounded-lg text-off-white transition-all duration-200 transform hover:border-accent-teal hover:text-accent-teal hover:bg-dark-element;
+        }
+    </style>
+
 </body>
 </html>
+
+
+
+
+
+
 
 
